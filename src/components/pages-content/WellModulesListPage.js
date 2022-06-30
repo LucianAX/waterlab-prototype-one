@@ -2,65 +2,52 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import VerticalBar from '../chart-components/VerticalBar';
-// import [chart] from '../chart-components/VerticalBar';
 import ContainerTable from '../table-components/ContainerTable';
 
-import { units } from '../../utils/global_state.js';
+import { WELL_MODULES } from '../../utils/GLOBAL-STATE';
 
-function DeviceListPage(props) {
-  /* const allDevicesArray = Mapping function for iterating through devices */
-      /* <Device Entry Component>
-          <Link to="">
-            // Device name
-          </Link>
-          // Device buttons
-          // Device data in table row
-      </Device> */
-
-    const dataArray = [];
-    for (let i = 0; i < units.length; i++) {
-        dataArray.push(
-            {
-                col1: units[i].Id,
-                col2: units[i].Name,
-                col3: units[i].Active,
-                col4: units[i].LocLat,
-                col5: units[i].LocLong,
-                col6: units[i].DateRegistered,
-            }
-        );
-    }   
+function WellModulesListPage(props) {
+    const dataArray = WELL_MODULES.map(module => {
+        return {
+            col1: module.wellModuleID,
+            col2: module.moduleName,
+            col3: module.status === true ? 'Active' : 'False',
+            col4: module.locationLatitude,
+            col5: module.locationLongitude,
+            col6: module.dateCreated,
+        }
+    });
 
     const columnsArray = [
         {
-            Header: 'Device ID', //Unit.Id
-            accessor: 'col1', // accessor is the "key" in the data
+            Header: 'Module ID',
+            accessor: 'col1', 
         },
         {
-            Header: 'Device Name', //Unit.Name 
+            Header: 'Module Name',
             accessor: 'col2',
         },
         {
-            Header: 'Device Status',
+            Header: 'Module Status',
             accessor: 'col3',
         },
         {
-            Header: 'Location Latitude', //Measurement.[TempC or Ph or Conductivity]
+            Header: 'Location Latitude',
             accessor: 'col4',
         },
         {
-            Header: 'Location Longitude', //SI unit
+            Header: 'Location Longitude',
             accessor: 'col5',
         },
         {
-            Header: 'Date registered', //Measurement.TimeCreated
+            Header: 'Date registered',
             accessor: 'col6',
         }
     ];
 
   return (<>
     {/* <!-- Page Heading --> */}
-    <h1 className="h1 mb-2 text-gray-800">Device List</h1>
+    <h1 className="h1 mb-2 text-gray-800">Well Modules List</h1>
     
     {/* Map section */}
     <div class="row">        
@@ -71,7 +58,7 @@ function DeviceListPage(props) {
                 {/* <!-- Card Header - Dropdown --> */}
                 <div
                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Map of WaterLab devices</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Map of WaterLab modules</h6>
                     <div class="dropdown no-arrow">
                         <a class="dropdown-toggle" id="dropdownMenuLink" href="#" role="button" 
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -107,7 +94,7 @@ function DeviceListPage(props) {
                 {/* <!-- Card Header - Dropdown --> */}
                 <div
                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Devices</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Modules</h6>
                     <div class="dropdown no-arrow">
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -133,8 +120,8 @@ function DeviceListPage(props) {
                                                     justifyContent: "center",
                                                     listStyle: "none" }}>
 
-                                            <li><button>Add device</button></li>
-                                            <li><button>Delete device</button></li>
+                                            <li><button>Add module</button></li>
+                                            <li><button>Delete module</button></li>
                                         </ul>
                                     {/* </div> */}
                     </div>
@@ -146,15 +133,12 @@ function DeviceListPage(props) {
     {/* All Devices Section */}
     <div className="row">
         {/* {allDevicesArray} */}
-        Device Entry
-        Device Entry
-        Device Entry
         <div className="col-xl-12 col-lg-12" style={{ width: "100%" }}>
         <div className="card border-left-primary shadow mb-4">
             {/* <!-- Card Header - Dropdown --> */}
             <div
                 className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 className="m-0 font-weight-bold text-danger">All Devices</h6>
+                <h6 className="m-0 font-weight-bold text-primary">All Well Modules</h6>
                 <div className="dropdown no-arrow">
                     <a className="dropdown-toggle" id="dropdownMenuLink" href="#" role="button" 
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -171,7 +155,7 @@ function DeviceListPage(props) {
             </div>
             {/* <!-- Card Body --> */}
             <div className="card-body">
-                <div className="">
+                <div className="col-xl-11">
                     <ContainerTable dataArray={dataArray} columnsArray={columnsArray} />
                 </div>
             </div>
@@ -182,4 +166,4 @@ function DeviceListPage(props) {
   </>)
 };
 
-export default DeviceListPage;
+export default WellModulesListPage;

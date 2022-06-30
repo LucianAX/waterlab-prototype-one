@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import logo from '../../media/Logo1Blue.png';
+
 class Navbar extends React.Component {
     
     // foloseste routematch pt highlight cand sunt pe pagina respectiva
@@ -11,8 +13,9 @@ class Navbar extends React.Component {
 
             {/* <!-- Sidebar - Brand --> */}
             <Link to="/overview" className="sidebar-brand d-flex align-items-center justify-content-center">
-                <div className="sidebar-brand-icon rotate-n-15">
-                    <i className="fas fa-laugh-wink"></i>
+                <div className="sidebar-brand-icon ">
+                    {/* <i className="fas fa-laugh-wink"></i> */}
+                    <img style={{ width: 75 }} src={logo} alt="WCG Logo" />
                 </div>
                 <div className="sidebar-brand-text mx-3">WaterLab</div>
             </Link>
@@ -33,7 +36,7 @@ class Navbar extends React.Component {
 
             {/* <!-- Heading --> */}
             <div className="sidebar-heading">
-                Details
+                Pages
             </div>
 
             {/* <!-- Nav Item - Measurements --> */}
@@ -46,9 +49,9 @@ class Navbar extends React.Component {
 
             
             <li className="nav-item">
-                <Link to="/device-list" className="nav-link">
+                <Link to="/well-modules-list" className="nav-link">
                     <i className="fas fa-fw fa-table"></i>
-                    <span>Device List</span>
+                    <span>Well Modules List</span>
                 </Link>
             </li>
 
@@ -78,9 +81,9 @@ class Navbar extends React.Component {
             <hr className="sidebar-divider d-none d-md-block" />
 
             {/* <!-- Sidebar Toggler (Sidebar) --> */}
-            <div className="text-center d-none d-md-inline">
-                <button className="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+            {/* <div className="text-center d-none d-md-inline"> */}
+                {/* <button className="rounded-circle border-0" id="sidebarToggle"></button> */}
+            {/* </div> */}
 
             {/* <!-- End of Sidebar --> */}
             </ul>

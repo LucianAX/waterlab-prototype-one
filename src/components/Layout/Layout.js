@@ -14,13 +14,11 @@ import LogoutModal from './LogoutModal';
 import LoginPage from '../pages-content/LoginPage';
 import OverviewPage from '../pages-content/OverviewPage';
 import MeasurementsPage from '../pages-content/MeasurementsPage';
-import DeviceListPage from '../pages-content/DeviceListPage';
-import DeviceSinglePage from '../pages-content/DeviceSinglePage';
+import WellModulesListPage from '../pages-content/WellModulesListPage';
+import WellModuleSinglePage from '../pages-content/WellModuleSinglePage';
 import MapPage from '../pages-content/MapPage';
 import ContactPage from '../pages-content/ContactPage';
 import ProfilePage from '../pages-content/ProfilePage';
-
-import authService from "../api-authorization/AuthorizeService";
 
 
 export default class Layout extends React.Component {
@@ -73,12 +71,12 @@ export default class Layout extends React.Component {
                           <MeasurementsPage />
                       </Route>
 
-                      <Route path="/device-list">
-                          <DeviceListPage />
+                      <Route path="/well-modules-list">
+                          <WellModulesListPage />
                       </Route>
 
-                      <Route path="/device-single">
-                          <DeviceSinglePage />
+                      <Route path="/well-module-single">
+                          <WellModuleSinglePage />
                       </Route>
 
                       <Route path="/map">

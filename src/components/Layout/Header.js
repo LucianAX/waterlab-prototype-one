@@ -21,7 +21,7 @@ class Header extends React.Component {
                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i className="fas fa-bell fa-fw"></i>
                       {/* <!-- Counter - Alerts --> */}
-                      <span className="badge badge-danger badge-counter">3</span>
+                      <span className="badge badge-danger badge-counter">2</span>
                   </a>
                   {/* <!-- Dropdown - Alerts --> */}
                   <div className="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -51,7 +51,7 @@ class Header extends React.Component {
                               Device <b>number 2</b> has problems with sensors!
                           </div>
                       </a>
-                      <a className="dropdown-item d-flex align-items-center" href="#">
+                      {/* <a className="dropdown-item d-flex align-items-center" href="#">
                           <div className="mr-3">
                               <div className="icon-circle bg-warning">
                                   <i className="fas fa-exclamation-triangle text-white"></i>
@@ -61,7 +61,7 @@ class Header extends React.Component {
                               <div className="small text-gray-500">October 22, 2019</div>
                               Spending Alert: We've noticed unusually high results of measurement in device <b>number 1</b>.
                           </div>
-                      </a>
+                      </a> */}
                       <a className="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                   </div>
               </li>

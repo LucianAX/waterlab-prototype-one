@@ -30,10 +30,10 @@ function OverviewPage(props) {
 
     <div className="row">
 
-        {/* Map with devices */}
+        Map with devices
         <div className="col-xl-9 col-lg-8">
             <div className="card border-left-success shadow mb-4">
-                {/* <!-- Card Header - Dropdown --> */}
+                <!-- Card Header - Dropdown -->
                 <div
                     className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 className="m-0 font-weight-bold text-primary">Map of WaterLab devices</h6>
@@ -51,11 +51,11 @@ function OverviewPage(props) {
                         </div>
                     </div>
                 </div>
-                {/* <!-- Card Body --> */}
+                <!-- Card Body -->
                 <div className="card-body">
                     <div className="">
 
-                        {/* ZOLTAN'S TASK  */}
+                        Map 
                         <iframe title="map" className="col-xl-12 col-lg-12"
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25940.879716104955!2d9.78649102763798!3d54.92272710118654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b337c2e0ee44ed%3A0x49a0979574e7aeeb!2zNjQwMCBTw7huZGVyYm9yZywgRMOhbnNrbw!5e0!3m2!1ssk!2sus!4v1604918481297!5m2!1ssk!2sus"
                                 width="750" height="300" frameborder="0" style={{ border: 1 }}
@@ -66,10 +66,10 @@ function OverviewPage(props) {
             </div>
         </div>
 
-        {/* Buttons with devices */}
+        Buttons with devices
         <div className="col-xl-3 col-lg-4">
             <div className="card border-left-success shadow mb-4">
-                {/* <!-- Card Header - Dropdown --> */}
+                <!-- Card Header - Dropdown -->
                 <div
                     className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 className="m-0 font-weight-bold text-primary">Devices</h6>
@@ -87,11 +87,11 @@ function OverviewPage(props) {
                         </div>
                     </div>
                 </div>
-                {/* <!-- Card Body --> */}
+                <!-- Card Body -->
                 <div className="card-body">
                     <div className="">
-                        {/* Container with buttons to devices */}
-                                    {/* <div className="col"> */}
+                        Container with buttons to devices
+                                    <div className="col">
                                         <ul style={{height: 290,
                                                     display: "flex",
                                                     flexDirection: "column",
@@ -104,7 +104,7 @@ function OverviewPage(props) {
                                             <li><button>Mock Device #2</button></li>
                                             <li><button>Mock Device #3</button></li>
                                         </ul>
-                                    {/* </div> */}
+                                    </div>
                     </div>
                 </div>
             </div>

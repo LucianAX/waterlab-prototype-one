@@ -6,7 +6,7 @@ const data = {
   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
   datasets: [
     {
-      label: '# of Votes',
+      label: 'Data levels',
       data: [12, 19, 3, 5, 2, 3],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
@@ -45,14 +45,6 @@ const VerticalBar = () => (
   <>
     <div className='header'>
       <h1 className='title'>Vertical Bar Chart</h1>
-      <div className='links'>
-        <a
-          className='btn btn-gh'
-          href='https://github.com/reactchartjs/react-chartjs-2/blob/react16/example/src/charts/VerticalBar.js'
-        >
-          Github Source
-        </a>
-      </div>
     </div>
     <Bar data={data} options={options} />
   </>

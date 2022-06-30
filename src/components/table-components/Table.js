@@ -22,6 +22,7 @@ function Table(props) {
               <th
                 {...column.getHeaderProps()}
                 style={{
+                  padding: '15px',
                   borderBottom: 'solid 3px red',
                   background: 'aliceblue',
                   color: 'black',
@@ -44,7 +45,7 @@ function Table(props) {
                   <td
                     {...cell.getCellProps()}
                     style={{
-                      padding: '10px',
+                      padding: '13px',
                       border: 'solid 1px gray',
                       background: 'papayawhip',
                     }}
