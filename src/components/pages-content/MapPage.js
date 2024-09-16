@@ -33,6 +33,42 @@ function MapPage(props) {
     // { lat: 55.050194, lng: 9.806806 },
     // ];
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3syXNR2ev7O-pzaq4vm7k8RFThqHM-lU&callback=initMap&libraries=&v=weekly" 
+      defer
+    ></script>
+  
+  function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 10,
+    center: { lat: 54.9629533, lng: 9.7766695 },
+  });
+
+  const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  const markers = locations.map((location, i) => {
+    return new google.maps.Marker({
+      position: location,
+      label: labels[i % labels.length],
+    });
+  });
+
+  new MarkerClusterer(map, markers, {
+    imagePath:
+      "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+  });
+}
+
+const locations = [
+  { lat: 54.905306, lng: 9.654167 },
+  { lat: 54.998056, lng: 9.670972 },
+  { lat: 55.050194, lng: 9.806806 },
+];
+
+  //LOGIC END
+  
   return (<>
     {/* <!-- Page Heading --> */}
     <h1 className="h1 mb-2 text-gray-800">Map</h1>
